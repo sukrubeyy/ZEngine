@@ -24,10 +24,12 @@ int main()
 		//Buffer Temizleme iþlemi çaðýrýlýyor
 		window.clear();
 
-		if (window.keyPressed(GLFW_KEY_A))
-			std::cout << "Main CPP Pressed" << std::endl;
+		double x, y;
+		window.getMousePos(x, y);
+		std::cout << x << "," << y << std::endl;
 
-		std::cout << window.getWidth() << " , " << window.getHeight() << std::endl;
+		
+
 #if 1
 		glBegin(GL_QUADS);
 		glVertex2f(-0.5f, -0.5f); //left bottom corner vertex

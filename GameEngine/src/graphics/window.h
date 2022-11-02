@@ -8,7 +8,7 @@ namespace ZEngine {
 	namespace graphics {
 
 #define MAXIMUMKEYS 1024
-#define MAXIMUMBUTTON 32
+#define MAX_BUTTONS 32
 
 		class Window {
 		public:
@@ -18,9 +18,9 @@ namespace ZEngine {
 			int width, height;
 			GLFWwindow* window;
 			bool close;
-			static bool keys[MAXIMUMKEYS];
-			static bool buttons[MAXIMUMBUTTON];
-			static double x, y;
+			bool keys[MAXIMUMKEYS];
+			bool mouseButtons[MAX_BUTTONS];
+			double x, y;
 		public:
 			Window(const char* name, int width, int height);
 			~Window();
@@ -30,10 +30,14 @@ namespace ZEngine {
 
 			inline int getWidth() { return width; }
 			inline int getHeight() { return height; }
-			static bool keyPressed(unsigned int keyCode);
+			bool keyPressed(unsigned int keyCode) const;
+			bool mouseButtonPressed(unsigned int btnCode) const;
+			void getMousePos(double& x, double& y) const;
 		private:
 			bool init();
 			friend static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
+			friend static void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
+			friend static void cursor_position_callback(GLFWwindow* window, double xpos, double ypos);
 		};
 	}
 }
