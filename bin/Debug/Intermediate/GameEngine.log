@@ -1,3 +1,4 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(498,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
   main.cpp
+D:\MyOwnGameEngine\GameEngine\GameEngine\src\maths\math_func.h(8,19): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   GameEngine.vcxproj -> D:\MyOwnGameEngine\GameEngine\bin\Debug\GameEngine.exe

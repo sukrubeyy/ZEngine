@@ -23,6 +23,8 @@ int main()
 	vec4 a(1.0f, 2.0f, 5.0f, 1.5f);
 	vec4 b(2, 4, 6,3);
 	vec4 c = a + b;
+	mat4 position = mat4::translation(vec3(3, 5, 2));
+
 	while (!window.closed()) {
 		
 		//Buffer Temizleme iþlemi çaðýrýlýyor
