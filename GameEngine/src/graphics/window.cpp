@@ -48,7 +48,7 @@ namespace ZEngine {
 
 			//Ana Context olarak penceremizi gönderiyoruz
 			glfwMakeContextCurrent(this->window);
-			//Ne iþe yarýyor unuttum
+			//Mouse Position yakalýyor
 			glfwSetWindowUserPointer(this->window, this);
 			//listen mouse button input callback
 			glfwSetMouseButtonCallback(this->window, mouse_button_callback);
