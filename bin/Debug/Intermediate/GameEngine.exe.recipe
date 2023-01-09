@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\MyOwnGameEngine\GameEngine\bin\Debug\GameEngine.exe</FullPath>
+      <FullPath>D:\OyunMotoru\ZEngine\bin\Debug\GameEngine.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
