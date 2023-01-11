@@ -38,7 +38,6 @@ namespace ZEngine {
 				return 0;
 			}
 
-
 			glShaderSource(fragment, 1, &fragSource, NULL);
 			glCompileShader(fragment);
 
@@ -52,7 +51,6 @@ namespace ZEngine {
 				glDeleteShader(fragment);
 				return 0;
 			}
-
 			glAttachShader(program, vertex);
 			glAttachShader(program, fragment);
 			glLinkProgram(program);
@@ -60,6 +58,28 @@ namespace ZEngine {
 			glDeleteShader(vertex);
 			glDeleteShader(fragment);
 			return program;
+		}
+		GLint Shader::getUniformLocation(const GLchar* name) {
+			return glGetUniformLocation(m_ShaderID,name);
+		}
+		void Shader::setUniform1f(const GLchar* name, float value) {
+			glUniform1f(getUniformLocation(name), value);
+		}
+		void Shader::setUniform1i(const GLchar* name, int value) {
+			glUniform1i(getUniformLocation(name), value);
+		}
+		void Shader::setUniform2f(const GLchar* name, const  maths::vec2& vector) {
+			glUniform2f(getUniformLocation(name), vector.x,vector.y);
+		}
+		void Shader::setUniform3f(const GLchar* name, const maths::vec3& vector) {
+			glUniform3f(getUniformLocation(name), vector.x,vector.y,vector.z);
+		}
+		void Shader::setUniform4f(const GLchar* name, const maths::vec4& vector) {
+			glUniform4f(getUniformLocation(name), vector.x, vector.y,vector.z,vector.w);
+		}
+		void Shader::setUniformMat4(const GLchar* name, const maths::mat4& matrix) {
+			glUniformMatrix4fv(getUniformLocation(name), 1, GL_FALSE, matrix.elements);
+
 		}
 
 		void Shader::enable() const {
